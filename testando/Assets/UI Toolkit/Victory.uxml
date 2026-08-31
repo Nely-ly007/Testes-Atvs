@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="VictoryRoot" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85);">
+        <ui:Label name="VictoryLabel" text="Fase concluída!" style="font-size: 34px; color: white; -unity-font-style: bold; -unity-text-align: middle-center; white-space: normal; max-width: 500px;" />
+    </ui:VisualElement>
+</ui:UXML>

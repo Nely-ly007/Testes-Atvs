@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="SlotsRoot" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.85);">
+        <ui:VisualElement style="background-color: rgb(30, 30, 40); padding: 30px; border-radius: 10px; align-items: center;">
+            <ui:Label text="Selecione um slot" style="font-size: 28px; color: white; margin-bottom: 20px; -unity-font-style: bold;" />
+
+            <ui:Button name="Slot1Button" text="Slot 1" style="width: 240px; height: 46px; margin-bottom: 10px; font-size: 18px;" />
+            <ui:Button name="Slot2Button" text="Slot 2" style="width: 240px; height: 46px; margin-bottom: 10px; font-size: 18px;" />
+            <ui:Button name="Slot3Button" text="Slot 3" style="width: 240px; height: 46px; margin-bottom: 18px; font-size: 18px;" />
+
+            <ui:Button name="CloseButton" text="Fechar" style="width: 240px; height: 40px; font-size: 16px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

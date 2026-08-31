@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="MenuRoot" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(20, 20, 30, 0.95);">
+        <ui:Label text="Meu Jogo de Plataforma" style="font-size: 42px; color: white; margin-bottom: 40px; -unity-font-style: bold;" />
+
+        <ui:Button name="ContinueButton" text="Continuar Jogo" style="width: 260px; height: 50px; margin-bottom: 12px; font-size: 20px;" />
+        <ui:Button name="NewGameButton" text="Novo Jogo" style="width: 260px; height: 50px; margin-bottom: 12px; font-size: 20px;" />
+        <ui:Button name="LoadGameButton" text="Carregar Jogo" style="width: 260px; height: 50px; margin-bottom: 12px; font-size: 20px;" />
+        <ui:Button name="QuitButton" text="Sair do Jogo" style="width: 260px; height: 50px; font-size: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>

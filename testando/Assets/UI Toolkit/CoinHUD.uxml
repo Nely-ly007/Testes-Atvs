@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="HUDRoot" style="flex-grow: 1; align-items: flex-start; justify-content: flex-start; padding: 20px;">
+        <ui:Label name="CoinCountLabel" text="Moedas: 0" style="font-size: 26px; color: white; -unity-font-style: bold; -unity-text-outline-width: 1px; -unity-text-outline-color: black;" />
+    </ui:VisualElement>
+</ui:UXML>

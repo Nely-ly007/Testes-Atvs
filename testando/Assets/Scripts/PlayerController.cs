@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Controlador básico de player para plataforma 2D: movimento horizontal + pulo.
-/// Usa Input.GetAxis por simplicidade/velocidade de entrega. Se quiser manter o
-/// padrão Input System (Action Maps) usado no restante da disciplina, troque o
-/// bloco de leitura de input pelas suas actions geradas (Move / Jump).
+/// Usa a API do novo Input System diretamente via Keyboard.current (sem precisar
+/// de um Input Actions Asset), pra ser rápido de plugar. Se quiser migrar para
+/// Action Maps/PlayerInput como no restante da disciplina, é só trocar a leitura
+/// de _horizontalInput e do pulo pelas suas actions.
 /// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -29,12 +31,17 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        var keyboard = Keyboard.current;
+        if (keyboard == null) return;
+
+        _horizontalInput = 0f;
+        if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) _horizontalInput -= 1f;
+        if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) _horizontalInput += 1f;
 
         _isGrounded = groundCheck != null &&
-            Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+                      Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        if (Input.GetButtonDown("Jump") && _isGrounded)
+        if (keyboard.spaceKey.wasPressedThisFrame && _isGrounded)
         {
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
         }

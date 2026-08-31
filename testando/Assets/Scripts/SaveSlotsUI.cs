@@ -27,6 +27,8 @@ public class SaveSlotsUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         _document = GetComponent<UIDocument>();
         _root = _document.rootVisualElement;
 

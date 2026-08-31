@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Controla o Menu de Pausa (UI Toolkit). Abre/fecha com a tecla P.
@@ -46,8 +47,7 @@ public class PauseMenuUI : MonoBehaviour
 
     private void Update()
     {
-        // Troque por uma Input Action do seu Input System se preferir, mantendo o padrão do projeto.
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
         {
             TogglePause();
         }

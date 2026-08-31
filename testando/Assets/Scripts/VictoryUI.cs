@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Controla a tela de vitória (UI Toolkit). Mostra "moedas coletadas / total" e
@@ -43,8 +44,7 @@ public class VictoryUI : MonoBehaviour
     {
         if (!_waitingForInput) return;
 
-        // Usando Input antigo aqui por simplicidade; troque pela Input Action do seu projeto se preferir.
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             _waitingForInput = false;
             Time.timeScale = 1f;

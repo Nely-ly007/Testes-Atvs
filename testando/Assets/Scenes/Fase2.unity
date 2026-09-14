@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8406579200264552082, guid: 706e94852f6ebb747938107302b4fadc, type: 3}
+      propertyPath: checkpointID
+      value: fase2_checkpoint_01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -644,11 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7625060710053458554, guid: 6ce546ce2c07ad646893758fd35e2c92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.99
+      value: 29.08
       objectReference: {fileID: 0}
     - target: {fileID: 7625060710053458554, guid: 6ce546ce2c07ad646893758fd35e2c92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7
+      value: -3.35
       objectReference: {fileID: 0}
     - target: {fileID: 8919672349185954861, guid: 6ce546ce2c07ad646893758fd35e2c92, type: 3}
       propertyPath: coinID

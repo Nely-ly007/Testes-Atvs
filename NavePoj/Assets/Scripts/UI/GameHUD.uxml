@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="hud-root" style="flex-grow: 1;">
+
+    <ui:VisualElement name="lives-container" style="flex-direction: row; position: absolute; top: 16px; left: 16px;">
+      <ui:VisualElement class="life-icon" style="width: 32px; height: 32px; margin-right: 6px; background-color: rgb(220,40,40);" />
+      <ui:VisualElement class="life-icon" style="width: 32px; height: 32px; margin-right: 6px; background-color: rgb(220,40,40);" />
+      <ui:VisualElement class="life-icon" style="width: 32px; height: 32px; margin-right: 6px; background-color: rgb(220,40,40);" />
+    </ui:VisualElement>
+
+    <ui:VisualElement name="boss-health-bar-bg" style="position: absolute; top: 16px; left: 25%; width: 50%; height: 20px; background-color: rgba(0,0,0,0.5);">
+      <ui:VisualElement name="boss-health-bar" style="width: 100%; height: 100%; background-color: rgb(51,191,51);" />
+    </ui:VisualElement>
+
+    <ui:VisualElement name="end-screen" style="position: absolute; width: 100%; height: 100%; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.7);">
+      <ui:Label name="end-title" text="VITÓRIA!" style="font-size: 48px; color: white; -unity-font-style: bold; margin-bottom: 20px;" />
+      <ui:Button name="retry-button" text="Tentar novamente" style="font-size: 20px; padding: 8px 20px;" />
+    </ui:VisualElement>
+
+  </ui:VisualElement>
+</ui:UXML>

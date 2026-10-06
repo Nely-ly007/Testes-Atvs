@@ -4,11 +4,7 @@ using ShooterBoss.Bullets;
 
 namespace ShooterBoss.Boss
 {
-    /// <summary>
-    /// Fica no mesmo GameObject do chefão (que tem o Animator).
-    /// Os StateMachineBehaviour pegam esta referência via
-    /// animator.GetComponent<BossShooter>() dentro de OnStateEnter/Update.
-    /// </summary>
+   
     public class BossShooter : MonoBehaviour
     {
         [SerializeField] private BulletPoolManager pool;

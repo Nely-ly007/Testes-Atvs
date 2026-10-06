@@ -21,18 +21,31 @@ namespace ShooterBoss.Player
         [SerializeField] private Transform firePoint;
         [SerializeField] private float bulletSpeed = 12f;
         [SerializeField, Range(0.2f, 1f)] private float fireInterval = 0.3f;
+        [SerializeField] private PlayerInput playerInput;
+        [Tooltip("Nome exato da Action de tiro no Input Actions Asset.")]
+        [SerializeField] private string fireActionName = "Fire";
 
         private Vector2 _moveInput;
-        private bool _isFiring;
         private float _fireTimer;
         private float _fireIntervalMultiplier = 1f; // powerup mexe aqui
+        private InputAction _fireAction;
+
+        private void Awake()
+        {
+            if (playerInput == null) playerInput = GetComponent<PlayerInput>();
+            _fireAction = playerInput.actions.FindAction(fireActionName);
+        }
 
         // --- Input System (PlayerInput com Send Messages, ou troque por Actions geradas) ---
         public void OnMove(InputValue value) => _moveInput = value.Get<Vector2>();
         public void OnFire(InputValue value)
         {
-            _isFiring = value.isPressed;
-            if (_isFiring) TryShoot(); // dispara imediatamente ao pressionar
+            // Dispara imediato ao apertar. NÃO usamos isso pra saber quando parar de
+            // atirar — o estado de "segurando" é lido direto da Action no Update
+            // (HandleHoldToFire), porque a mensagem de "soltar" o botão nem sempre
+            // chega via Send Messages dependendo da Interaction configurada na Action,
+            // e se ela não chegar a navinha fica atirando pra sempre.
+            if (value.isPressed) TryShoot();
         }
 
         private void Update()
@@ -51,7 +64,14 @@ namespace ShooterBoss.Player
 
         private void HandleHoldToFire()
         {
-            if (!_isFiring) return;
+            // Fonte da verdade é o estado atual da Action, não uma flag setada
+            // por evento — assim não tem como ficar "preso" atirando pra sempre.
+            bool isHeld = _fireAction != null && _fireAction.IsPressed();
+            if (!isHeld)
+            {
+                _fireTimer = 0f;
+                return;
+            }
 
             _fireTimer += Time.deltaTime;
             float interval = fireInterval * _fireIntervalMultiplier;

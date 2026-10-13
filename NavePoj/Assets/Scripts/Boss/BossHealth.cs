@@ -12,7 +12,7 @@ namespace ShooterBoss.Boss
     /// </summary>
     public class BossHealth : MonoBehaviour
     {
-        [SerializeField] private int maxHp = 500; // ajuste para dar ~1min de luta
+        [SerializeField] private int maxHp = 250; // recalculado: com fireInterval~0.3s e dano 1/bala, dá ~1min de luta (500 estava gerando ~2,5min, tempo demais pra 3 vidas aguentarem)
         [SerializeField] private float invulnerabilityDuration = 2f;
         [SerializeField] private Animator animator;
 

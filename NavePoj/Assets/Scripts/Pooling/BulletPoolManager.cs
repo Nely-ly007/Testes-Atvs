@@ -4,12 +4,7 @@ using ShooterBoss.Bullets;
 
 namespace ShooterBoss.Pooling
 {
-    /// <summary>
-    /// Um componente = uma pool. Coloque uma instância para a bala do player
-    /// e outra para a bala do chefão (prefabs diferentes ou tag diferente).
-    /// Usa a classe pronta da Unity (UnityEngine.Pool.ObjectPool<T>),
-    /// exigido pelo enunciado — não reimplementa o padrão Pool.
-    /// </summary>
+    
     public class BulletPoolManager : MonoBehaviour
     {
         [SerializeField] private Bullet bulletPrefab;

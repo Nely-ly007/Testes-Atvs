@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <ui:VisualElement name="result-root" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(12,12,16);">
+
+    <ui:Label name="result-title" text="VITÓRIA!" style="font-size: 56px; color: white; -unity-font-style: bold; margin-bottom: 28px;" />
+    <ui:Label name="result-subtitle" text="" style="font-size: 18px; color: rgb(200,200,200); margin-bottom: 36px;" />
+
+    <ui:Button name="retry-button" text="Tentar novamente" style="font-size: 20px; padding: 10px 28px;" />
+
+  </ui:VisualElement>
+</ui:UXML>

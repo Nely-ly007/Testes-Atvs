@@ -9,6 +9,7 @@ namespace ShooterBoss.Player
         [SerializeField] private float invulnerabilityAfterHit = 2f; // igualado ao invulnerabilityDuration do BossHealth — 1.5s ainda era curto contra as rajadas de Vida Baixa
 
         public int CurrentLives { get; private set; }
+        public int MaxLives => maxLives;
         public event Action<int, int> OnLivesChanged; // (current, max)
         public event Action OnPlayerDied;
 

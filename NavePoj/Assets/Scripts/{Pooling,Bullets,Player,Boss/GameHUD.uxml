@@ -11,10 +11,5 @@
       <ui:VisualElement name="boss-health-bar" style="width: 100%; height: 100%; background-color: rgb(51,191,51);" />
     </ui:VisualElement>
 
-    <ui:VisualElement name="end-screen" style="position: absolute; width: 100%; height: 100%; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.7);">
-      <ui:Label name="end-title" text="VITÓRIA!" style="font-size: 48px; color: white; -unity-font-style: bold; margin-bottom: 20px;" />
-      <ui:Button name="retry-button" text="Tentar novamente" style="font-size: 20px; padding: 8px 20px;" />
-    </ui:VisualElement>
-
   </ui:VisualElement>
 </ui:UXML>
